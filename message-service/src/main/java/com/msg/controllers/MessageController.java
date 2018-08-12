@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.msg.entity.Message;
 
-@RestController(value = "messageController")
+@RestController
 @RequestMapping(path = "/messages")
 public class MessageController {
 
