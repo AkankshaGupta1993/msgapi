@@ -69,7 +69,7 @@ public class MessageController {
 			status = HttpStatus.BAD_REQUEST;
 		}
 		
-		return ResponseEntity.status(status).body(retMsg);//messages;
+		return ResponseEntity.status(status).body(retMsg);
 	}
 	
 	@DeleteMapping(path = "/{messageId}")
