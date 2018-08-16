@@ -55,21 +55,21 @@ public class MessageController {
 	
 	@GetMapping(path = "/{messageId}")
 	public ResponseEntity<Message> getMessage(@PathVariable(name ="messageId" ) Long messageId ) {
-		Message retMsg = null;	
+		Message returnMsg = null;	
 		for (Message message: messages) {
 				if (message.getMessageId().equals(messageId)) {
-					retMsg = message;
+					returnMsg = message;
 					break;
 				}
 			}
 		HttpStatus status = null;
-		if (retMsg != null) {
+		if (returnMsg != null) {
 			status = HttpStatus.OK;
 		} else {
 			status = HttpStatus.BAD_REQUEST;
 		}
 		
-		return ResponseEntity.status(status).body(retMsg);
+		return ResponseEntity.status(status).body(returnMsg);
 	}
 	
 	@DeleteMapping(path = "/{messageId}")
